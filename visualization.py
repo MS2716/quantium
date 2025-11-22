@@ -7,18 +7,14 @@ app = Dash(__name__)
 
 # Dataset 
 df = pd.read_csv('./data/combined_daily_sales.csv')
+df = df.sort_values(by='date')
 
 app = Dash(__name__)
 
-# Using plotly.express is simpler for this task.
-# It automatically handles mapping the 'region' column to different colors and creates a legend.
-fig = px.line(df, x="date", y="sales", color="region", title="Daily Sales")
-
-# The original approach with graph_objects would require looping through regions
-# fig = go.Figure(data=go.Scatter(x=df['date'], y=df['sales'], mode='markers', marker=dict(color=df['region'])), layout=go.Layout(title='Daily Sales'))
+fig = px.line(df, x="date", y="sales", title="Pink Morsel Sales")
 
 app.layout = html.Div([
-        html.H1("Soul Foods Sales Dashboard"),
+        html.H1("Soul Foods Pink Morsel Sales Visualization"),
         dcc.Graph(id='line-chart', figure=fig)
     ])
 

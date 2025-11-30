@@ -8,4 +8,7 @@ Started with the data setup task one.
 Getting the data filtered and cleaned for specific purpose.
 
 ## Data Visualizer
-Making the line chart using the plotly
+Making the line chart using the plotly.
+
+## Data Dressup
+Adding the css to get the data according to the regions by adding the radio button for it.
